@@ -1,5 +1,5 @@
-#include<iostream>
-#include"seqlist.cpp"
+#include "include/seqlist.h"
+#include <iostream>
 
 using namespace std;
 

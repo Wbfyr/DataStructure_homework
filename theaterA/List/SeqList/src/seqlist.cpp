@@ -1,4 +1,4 @@
-#include"seqlist.h"
+#include"include/seqlist.h"
 
 template<class elemType>
 void seqlist<elemType>::doublespace(){
