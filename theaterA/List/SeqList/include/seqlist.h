@@ -20,8 +20,8 @@ public:
     void doublespace();
     //插入,i为插入的位置，e是插入的元素
     void insert(int i,const elemType &e);
-    //删除,i为删除的位置，e是删除的元素
-    void _delete(int i,const elemType &e);
+    //删除,i为删除的位置
+    void _delete(int i);
     //查找，查找元素是否被包含，如果是，返回下标，若否，返回0
     int find(const elemType &e) const;
     int lenth(){return len;}
@@ -47,11 +47,10 @@ void seqlist<elemType>::doublespace(){
         size=size*2-1;
         maxSize*=2;
         elemType *temp=new elemType[size];
-        for(int i=1;i<size;++i){
+        for(int i=1;i<size;++i)
             temp[i]=elem[i];
             delete [] elem;
             elem=temp;
-        }
     }
 
 template<class elemType>
@@ -66,7 +65,7 @@ void seqlist<elemType>::insert(int i,const elemType &e){
 }
 
 template<class elemType>
-void seqlist<elemType>::_delete(int i,const elemType &e){
+void seqlist<elemType>::_delete(int i){
     if(i<1||i>size) throw "error index";
     for(int j=i;j<len;++j) elem[j]=elem[j+1];
     len--;
