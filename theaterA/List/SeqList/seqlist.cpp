@@ -1,3 +1,4 @@
+//队列之顺序表的实现
 #include"seqlist.h"
 
 template<class elemType>

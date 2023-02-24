@@ -1,3 +1,4 @@
+//队列之顺序表的头文件
 #ifndef SEQLIST
 #define SEQLIST
 #include<string>
