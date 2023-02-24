@@ -1,7 +1,9 @@
 #ifndef SEQLIST
 #define SEQLIST
 
+#include<iostream>
 #include "throwInfo.h"
+using namespace std;
 
 template<class elemType>
 class seqlist
@@ -13,7 +15,6 @@ public:
     seqlist(int a):size(a+1),maxSize(size-1),len(0){
         elem=new elemType[size];
     };
-
 
     //拓展空间为双倍
     void doublespace();
@@ -30,7 +31,10 @@ public:
         if(i<1||i>len) throw throwInfo();
         return elem[i];
     }
-    // ostream &operator << (ostream &os,cons)
+    friend ostream &operator << (ostream &os,const elemType &e){
+         os<<e;
+         return os;
+    }
 
     ~seqlist(){
         delete[] elem;

@@ -13,8 +13,8 @@ int main(){
     try
     {
         for(int i=1;i<5;++i){
-        int m=list1[i];
-        cout<<m<<endl;
+
+        cout<<list1[i]<<endl;
     }
     }
     catch(throwInfo ex)
