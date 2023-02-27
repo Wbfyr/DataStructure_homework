@@ -10,6 +10,7 @@ template<class elemType>
 class linklist
 {
 private:
+    // template<class elemType>
     class node
     {
         friend class linklist<elemType>;
@@ -26,8 +27,8 @@ private:
 public:
     linklist(){head=new node;};
 
-    bool isEmpty(){return head->next;}const;//是否是空表
-    bool isFull(){return false;}const;//是否空间已满
+    bool isEmpty()const{return !head->next;};//是否是空表
+    bool isFull()const{return false;};//是否空间已满
     int length()const;//获取长度
     elemType &get(int i)const;//获取元素
     int find(const elemType &e)const;//查找
@@ -35,6 +36,7 @@ public:
     void remove(int i);//删除
     void reserve();//元素就地逆置
     void clear();//清空
+
     ~linklist(){
     if(head->next) 
     {clear();delete head;}
