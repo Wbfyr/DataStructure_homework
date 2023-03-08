@@ -22,6 +22,7 @@ int linklist<elemType>::find(const elemType &e) const
         if (e == p->data)
             return i;
     }
+    return 0;
 }
 
 template <class elemType>
@@ -71,7 +72,7 @@ void linklist<elemType>::remove(int i)
 {
     if (i < 1)
         throw throwerror("index is too small!");
-    int j = 0;
+    int j = 1;
     node *p = head;
     while (j < i && p)
     {
@@ -80,8 +81,11 @@ void linklist<elemType>::remove(int i)
     }
     if (!p)
         throw throwerror("index is too large!");
-    node *q = p;
-    p = p->next;
+    node *q = p->next;
+    if (p->next)
+    {
+        p->next = p->next->next;
+    }
     delete q;
 }
 
