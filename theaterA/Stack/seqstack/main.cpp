@@ -12,13 +12,14 @@ int main()
 
     seqstack<char> s1(20);
     int i = 0;
-    while (ch[i] != '\0')
+    char str = ch[i];
+    while (str != '\0')
     {
-        if (ch[i] == '(' || ch[i] == '{' || ch[i] == '[')
-            s1.push(ch[i]);
-        else if (ch[i] == ')' || ch[i] == '}' || ch[i] == ']')
+        if (str == '(' || str == '{' || str == '[')
+            s1.push(str);
+        else if (str == ')' || str == '}' || str == ']')
         {
-            switch (ch[i])
+            switch (str)
             {
             case ')':
                 if (s1.top() == '(')
@@ -50,6 +51,7 @@ int main()
             }
         }
         i++;
+        str = ch[i + 1];
     }
     if (s1.isEmpty())
         cout << "everything is fine!";
