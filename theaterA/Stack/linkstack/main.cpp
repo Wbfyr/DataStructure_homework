@@ -13,6 +13,7 @@ int main()
         i++;
     }
     inToSufForm(str);
+
     i = 0;
     while (str[i] != '\0')
     {
