@@ -58,7 +58,7 @@ linkstack<elemType>::~linkstack()
 {
     try
     {
-        while (top())
+        while (Top)
         {
             pop();
         }
